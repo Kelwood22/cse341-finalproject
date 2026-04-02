@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./docs/swagger.json');
 const connectDB = require('./config/db');
+const errorHandler = require("./middleware/errorHandler");
 
 dotenv.config();
 const app = express();
@@ -21,6 +22,9 @@ app.use('/', require('./routes'));
 
 //Swagger documentation
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+// Error handler
+app.use(errorHandler);
 
 // Start the server
 app.listen(port, () => {
