@@ -19,14 +19,6 @@ const doc = {
     }
   ],
 
-  securityDefinitions: {
-    bearerAuth: {
-      type: "apiKey",
-      name: "Authorization",
-      in: "header",
-      description: "Enter JWT as: Bearer <token>"
-    }
-  }
 };
 
 const outputFile = './docs/swagger.json';

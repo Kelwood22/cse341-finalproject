@@ -5,16 +5,15 @@ dotenv.config();
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./docs/swagger.json');
 const connectDB = require('./config/db');
-const session = require('express-session')
+const session = require('express-session');
 const passport = require("./config/passport")
-const GitHubStrategy = require('passport-github2').Strategy
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 // Github Oauth 
 app.use(session({
-  secret: "secretkey",
+  secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: true
 }));

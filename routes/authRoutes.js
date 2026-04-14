@@ -12,7 +12,7 @@ const {authController} = require("../controllers/authController")
 // Redirect to GitHub OAuth
 router.get("/login",
   // #swagger.ignore = true
-  passport.authenticate("github", { scope: ["user:email"], session: false })
+  passport.authenticate("github", { scope: ["user:email"], session: true })
 );
 
 //  Callback GitHub
@@ -20,15 +20,21 @@ router.get(
   "/github/callback",
   passport.authenticate("github", {
     failureRedirect: "/",
-    session: false
+    session: true
   }),
     authController  
 )
 
 // Logout
 router.get("/logout", (req, res) => {
-  req.logout(() => {
-    res.redirect("/");
+  req.logout((err) => {
+    if (err) {
+      return res.status(500).json({ success: false, message: "Logout failed" });
+    }
+
+    req.session?.destroy(() => {
+      res.redirect("/");
+    });
   });
 });
 

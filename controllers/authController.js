@@ -1,6 +1,4 @@
 const User = require("../models/userModel");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
 // Controller functions for OAuth
 
 // Example: Handle OAuth callback
@@ -11,8 +9,16 @@ const callback = (req, res) => {
 const authController = (req, res) => {
   // #swagger.ignore = true
   //#swagger.tags=['User']
-  const token = jwt.sign({ id: req.user._id, role: req.user.role }, process.env.JWT_SECRET, { expiresIn: "1d" });
-  res.json({ success: true, token });
+  res.json({
+    success: true,
+    message: "Authenticated",
+    user: {
+      id: req.user._id,
+      name: req.user.name,
+      email: req.user.email,
+      role: req.user.role
+    }
+  });
 };
 
 
