@@ -14,6 +14,10 @@ npm install
 In the project root, create a file named .env:
 PORT=3000
 MONGODB_URI=<your-connection-string>
+GITHUB_CLIENT_ID=<your-github-client-id>
+GITHUB_CLIENT_SECRET=<your-github-client-secret>
+GITHUB_CALLBACK_URL=<your-github-callback-url>
+SESSION_SECRET=<your-session-secret>
 
 
 The MongoDB Lead will provide the connection string.
@@ -26,6 +30,10 @@ http://localhost:3000
 
 5. Swagger UI is available at:
 http://localhost:3000/api-docs
+
+OAuth / Session Notes
+GitHub OAuth is used for login. Protected routes rely on the session cookie.
+Calling /auth/logout clears the session and redirects to /.
 
 6. To regenerate Swagger documentation after adding new routes:
 node swagger.js
