@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Chocolate Cake",
+        "description": "A rich and moist chocolate cake topped with chocolate ganache.",
+        "price": 20.99,
+        "category": "Chocolate",
+        "imageUrl": "https://example.com/images/chocolate_cake.jpg",
+        "stock": 10
+    },
+    {
+        "name": "Vanilla Cake",
+        "description": "A classic vanilla cake with a light and fluffy texture.",
+        "price": 18.99,
+        "category": "Vanilla",
+        "imageUrl": "https://example.com/images/vanilla_cake.jpg",
+        "stock": 15
+    },
+    {  
+        "name": "Red Velvet Cake",
+        "description": "A vibrant red velvet cake with a hint of cocoa and cream cheese frosting.",
+        "price": 22.99,
+        "category": "Red Velvet",
+        "imageUrl": "https://example.com/images/red_velvet_cake.jpg",
+        "stock": 8
+    },
+    {
+        "name": "Lemon Cake",
+        "description": "A zesty lemon cake with a tangy lemon glaze.",
+        "price": 19.99,
+        "category": "Lemon",
+        "imageUrl": "https://example.com/images/lemon_cake.jpg",
+        "stock": 12
+    },
+    {
+        "name": "Carrot Cake",
+        "description": "A moist carrot cake with cream cheese frosting and a hint of cinnamon.",
+        "price": 21.99,
+        "category": "Carrot",
+        "imageUrl": "https://example.com/images/carrot_cake.jpg",
+        "stock": 9
+    },
+    {
+        "name": "Strawberry Shortcake",
+        "description": "A light and airy cake layered with fresh strawberries and whipped cream.",
+        "price": 23.99,
+        "category": "Strawberry",
+        "imageUrl": "https://example.com/images/strawberry_shortcake.jpg",
+        "stock": 7
+    }
+]
